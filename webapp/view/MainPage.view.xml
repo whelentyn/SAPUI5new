@@ -1,0 +1,142 @@
+<mvc:View
+    controllerName="InnovationCamp.myfirstproject.controller.MainPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <!-- <Page title="{i18n>title}">
+        <Text text="Hello World"/>
+        <Button text="Say Hello" press=".onShowHello"/>
+        <Input
+        value="{/recipient/name}"
+        description="Hello {/recipient/name}"
+        valueLiveUpdate="true"
+        width="60%"/>
+    </Page> -->
+    <Page title="{i18n>homePageTitle}">
+        <content>
+            <Button
+                press=".onPressBtn"
+                text="Expand the tab"
+                icon="sap-icon://travel-expense-report"
+                class="sapUiSmallMarginEnd"
+            />
+            <Button
+                id="helloDialogButton"
+                text="{i18n>openDialogButtonText}"
+                press=".onOpenDialog"
+                icon="sap-icon://discussion"
+                class="sapUiSmallMarginEnd"
+            />
+            <Button
+                id="seeInvoices"
+                text="{i18n>seeInvoicesBtn}"
+                press=".onOpenInvoices"
+                class="sapUiSmallMarginEnd"
+                icon="sap-icon://travel-expense-report"
+            />
+            <!-- <Panel id="idPanel"
+              headerText="{i18n>helloPanelTitle}" expandable = "true">
+              <content>
+                 <Button
+                    text="{i18n>showHelloButtonText}"
+                    press=".onShowHello"/>
+                 <Input
+                    value="{/recipient/name}"
+                    description="Hello {/recipient/name}"
+                    valueLiveUpdate="true"
+                    width="60%"/>
+              </content>
+           </Panel> -->
+            <Panel
+                id="idPanel"
+                headerText="{i18n>helloPanelTitle}"
+                expandable="true"
+                class="sapUiResponsiveMargin"
+                width="auto"
+            >
+                <content>
+                    <HBox>
+                        <Button
+                            text="{i18n>showHelloButtonText}"
+                            press=".onShowHello"
+                            class="sapUiSmallMarginEnd"
+                        />
+                        <Input
+                            value="{/recipient/name}"
+                            valueLiveUpdate="true"
+                            width="60%"
+                        />
+                        <Text
+                            text="Hello {/recipient/name}"
+                            class="sapUiSmallMargin"
+                        />
+                    </HBox>
+
+                    <HBox>
+                        <Table
+                            id="AirlineTable"
+                            inset="false"
+                            items="{
+			path: 'pageModel>/Airline'
+		}"
+                        >
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <Title
+                                            text="Airlines"
+                                            level="H2"
+                                        />
+                                        <ToolbarSpacer />
+                                        <Button type="Transparent" text="Load Data" press="onLoadData">
+                                            
+                                        </Button>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <infoToolbar>
+                                <OverflowToolbar>
+                                    <Label
+                                        text="Wide range of available products"
+                                    />
+                                </OverflowToolbar>
+                            </infoToolbar>
+                            <columns>
+                                <Column width="12em">
+                                    <Text text="Airline Code" />
+                                </Column>
+                                <Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <Text text="Airline Name" />
+                                </Column>
+                                <Column
+                                    minScreenWidth="Desktop"
+                                    demandPopin="true"
+                                    hAlign="End"
+                                >
+                                    <Text text="Airline Currency" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <ObjectIdentifier
+                                            title="{pageModel>AirlineName}"
+                                        />
+                                        <Text text="{pageModel>AirlineCode}" />
+                                        <Text
+                                            text="{pageModel>AirlineCurrency}"
+                                        />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </HBox>
+                </content>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
