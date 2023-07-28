@@ -128,7 +128,7 @@
                                         />
                                         <Text text="{pageModel>AirlineCode}" />
                                         <Text
-                                            text="{pageModel>AirlineCurrency}"
+                                            text="{pageModel>CurrencyCode}"
                                         />
                                     </cells>
                                 </ColumnListItem>
